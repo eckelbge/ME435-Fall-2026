@@ -1,13 +1,23 @@
 import serial
+import time
 
 print("Learning Pyserial")
 
 ser = serial.Serial("COM6",19200,timeout=10)
 
-while not ser.is_open:
-    print("Opening...")
+time.sleep(2.0) #Necessary sometimes
 
-#TODO: Use the ser object
+ser.reset_output_buffer()
+message="RESET"
+print(message)
+message_bytes=(message+"\n").encode()
+print(message_bytes)
 
+ser.write(message_bytes)
+
+response_bytes=ser.readline()
+print(response_bytes)
+response=response_bytes.decode().strip()
+print(response)
 
 ser.close()
