@@ -2,7 +2,8 @@ import serial
 import time
 
 
-ser = serial.Serial("COM6",19200,timeout=10)
+#ser = serial.Serial("COM6",19200,timeout=10)
+ser = serial.Serial("/dev/ttyACM0",19200,timeout=10)
 
 time.sleep(2.0) #Necessary sometimes
 ser.reset_output_buffer()
