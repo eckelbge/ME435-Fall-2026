@@ -2,7 +2,7 @@ import serial
 import time
 
 
-class PlateLoader:
+class Plateloader:
     def __init__(self, port="/dev/ttyACM0"):
         self.port = port
         self.ser = None

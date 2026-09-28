@@ -3,7 +3,7 @@ import plateloader
 def main():
     print("Serial Menu")
     #loader = plateloader.PlateLoader("/dev/ttyUSB0")
-    loader = plateloader.PlateLoader()
+    loader = plateloader.Plateloader()
     loader.connect()
     print("0. Exit") #Seems to work
     print("1. RESET") #Seems to work
