@@ -5,10 +5,10 @@ def main():
     #loader = plateloader.PlateLoader("/dev/ttyUSB0")
     loader = plateloader.PlateLoader()
     loader.connect()
-    print("0. Exit")
-    print("1. RESET")
+    print("0. Exit") #Seems to work
+    print("1. RESET") #Seems to work
     print("2. X-AXIS")
-    print("3. GRIPPER")
+    print("3. GRIPPER") #Seems to work
     print("4. Z-AXIS")
     print("5. MOVE")
     print("6. Status")
