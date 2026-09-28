@@ -7,10 +7,10 @@ def main():
     loader.connect()
     print("0. Exit") #Seems to work
     print("1. RESET") #Seems to work
-    print("2. X-AXIS")
+    print("2. X-AXIS") #Seems to work
     print("3. GRIPPER") #Seems to work
     print("4. Z-AXIS") #Seems to work
-    print("5. MOVE")
+    print("5. MOVE") #Seems to work
     print("6. Status") #Seems to work since I don't think Arduino has this coded on it
     while True:
         selection = int(input("Selection: "))
@@ -20,8 +20,8 @@ def main():
             response = loader.send_command("RESET")
             print(response)
         elif selection == 2:
-            xselect = int(input("X Position: "))
-            response = loader.send_command("X-AXIS ",xselect)
+            xselect = str(input("X Position: "))
+            response = loader.send_command("X-AXIS "+ xselect)
             print(response)
         elif selection == 3:
             print("1 for OPEN")
@@ -44,9 +44,9 @@ def main():
                 response = loader.send_command("Z-AXIS RETRACT")
                 print(response)
         elif selection == 5:
-            frselect = int(input("Start Position: "))
-            toselect = int(input("End Position: "))
-            response = loader.send_command("MOVE ",frselect,", ",toselect)
+            frselect = str(input("Start Position: "))
+            toselect = str(input("End Position: "))
+            response = loader.send_command("MOVE "+ frselect +", "+ toselect)
         elif selection == 6:
             response = loader.send_command("LOADER_STATUS")
             print(response)
