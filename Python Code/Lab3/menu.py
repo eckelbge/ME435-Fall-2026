@@ -9,9 +9,9 @@ def main():
     print("1. RESET") #Seems to work
     print("2. X-AXIS")
     print("3. GRIPPER") #Seems to work
-    print("4. Z-AXIS")
+    print("4. Z-AXIS") #Seems to work
     print("5. MOVE")
-    print("6. Status")
+    print("6. Status") #Seems to work since I don't think Arduino has this coded on it
     while True:
         selection = int(input("Selection: "))
         if selection == 0:
@@ -38,9 +38,9 @@ def main():
             print("0 for RETRACT")
             zselection = int(input("Selection: "))
             if zselection == 1:
-                response = loader.send_command("Z-AXIS OPEN")
+                response = loader.send_command("Z-AXIS EXTEND")
                 print(response)
-            elif gripselection ==0:
+            elif zselection == 0:
                 response = loader.send_command("Z-AXIS RETRACT")
                 print(response)
         elif selection == 5:
