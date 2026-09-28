@@ -1,1 +1,1 @@
-print("Hell from the Pi Car")
+print("Hello from the Pi Car")
