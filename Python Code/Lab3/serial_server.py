@@ -6,7 +6,7 @@ import threading
 app = flask.Flask(__name__, static_url_path="",static_folder="public")
 
 serial_lock = threading.Lock()
-loader = plateloader.Plateloader() # TODO: Set port if needed.
+loader = plateloader.Plateloader() # TODO: Set port if needed. "/dev/ttyUSB0"
 
 @app.route("/")
 def handle_naked_domain():
@@ -16,10 +16,14 @@ def handle_naked_domain():
 def handle_plateloader_commands(command):
     with serial_lock:
         response = loader.send_command(command)
-    return "Success!"
+    return response
 
 
 if __name__ =="__main__":
     print("Running flask!")
     loader.connect()
-    app.run(host="0.0.0.0", port=8081, debug=True, use_reloader=False) # , use_reloader=False
+    try:
+        app.run(host="0.0.0.0", port=8080, debug=True, use_reloader=False) # , use_reloader=False
+    finally:
+        print("Disconnecting from Plate Loader")
+        loader.disconnect()
