@@ -3,7 +3,7 @@ import time
 
 
 class Plateloader:
-    def __init__(self, port="/dev/ttyACM0"): #/dev/ttyACM0, /dev/ttyUSB0
+    def __init__(self, port="/dev/ttyUSB0"): #/dev/ttyACM0, /dev/ttyUSB0
         self.port = port
         self.ser = None
 
