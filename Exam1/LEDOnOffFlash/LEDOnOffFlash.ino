@@ -15,17 +15,22 @@ void loop() {
     } else if(inputString.equals("LED OFF")){
       digitalWrite(13,LOW);
       Serial.println("LED Off");
-    } else if(inputString.equals("FLASH 3 1000")){
-      int flashnum = 3;
-      int flashwait = 1000;
-      for (int i=0; i<=flashnum; i++){
+    } else if(inputString.startsWith("FLASH")){
+      String args = inputString.substring(6); 
+      int spaceIndex = args.indexOf(" "); 
+      int numFlashes = args.substring(0, spaceIndex).toInt(); 
+      int periodMs = args.substring(spaceIndex + 1).toInt();
+      for (int i=1; i<=numFlashes; i++){
         digitalWrite(13,HIGH);
-        delay(flashwait/2);
+        delay(periodMs/2);
         digitalWrite(13,LOW);
-        delay(flashwait/2);
+        delay(periodMs/2);
       }
       digitalWrite(13,LOW);
-      Serial.println("Flashes = 3 PeriodMs = 1000");
+      Serial.print("Flashes = ");
+      Serial.print(numFlashes);
+      Serial.print(" PeriodMs = ");
+      Serial.println(periodMs);
     } else{
       Serial.print("Unknown command -->");
       Serial.println(inputString);
