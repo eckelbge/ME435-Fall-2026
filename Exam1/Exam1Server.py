@@ -12,10 +12,20 @@ led = led.LED() # TODO: Set port if needed. "/dev/ttyUSB0"
 def handle_naked_domain():
     return flask.redirect("/htmlmenu.html")
 
-@app.get("/api/<command>")
-def handle_led_commands(command):
+@app.get("/api/led/on")
+def handle_led_on():
     with serial_lock:
-        response = led.send_command(command)
+        response = led.send_command("LED ON")
+    return response
+@app.get("/api/led/off")
+def handle_led_off():
+    with serial_lock:
+        response = led.send_command("LED OFF")
+    return response
+@app.get("/api/flash/<numflash>/<perflash>")
+def handle_flash(numflash,perflash):
+    with serial_lock:
+        response = led.send_command("FLASH "+ numflash + perflash)
     return response
 
 
