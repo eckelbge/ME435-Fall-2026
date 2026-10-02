@@ -25,7 +25,9 @@ def handle_led_off():
 @app.get("/api/flash/<numflash>/<perflash>")
 def handle_flash(numflash,perflash):
     with serial_lock:
-        response = led.send_command("FLASH "+ numflash + perflash)
+        numberflash=str(numflash)
+        periodflash=str(perflash)
+        response = led.send_command("FLASH "+ numberflash +" "+ periodflash)
     return response
 
 

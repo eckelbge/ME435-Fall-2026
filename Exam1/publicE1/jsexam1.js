@@ -13,16 +13,16 @@ function main(){
     // document.querySelector("#reset").innerHTML = "Hello";
 
     document.querySelector("#on").onclick = () => {
-        sendCommand("LED ON");
+        sendCommand("led/on");
     };
     document.querySelector("#off").onclick = () => {
-        sendCommand("LED OFF");
+        sendCommand("led/off");
     };
    
     document.querySelector("#flash").onclick = () => {
         let numflash = document.querySelector("#flashnum").value
         let perflash = document.querySelector("#flashper").value
-        sendCommand(`FLASH ${numflash} ${perflash}`)
+        sendCommand(`flash/${numflash}/${perflash}`)
     };
 }
 
