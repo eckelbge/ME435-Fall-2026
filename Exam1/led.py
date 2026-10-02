@@ -3,7 +3,7 @@ import time
 
 
 class LED:
-    def __init__(self, port="/dev/ttyACM1"): #/dev/ttyACM0, /dev/ttyUSB0
+    def __init__(self, port="/dev/ttyACM0"): #/dev/ttyACM0, /dev/ttyUSB0
         self.port = port
         self.ser = None
 

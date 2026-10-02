@@ -19,10 +19,10 @@ function main(){
         sendCommand("LED OFF");
     };
    
-    document.querySelector("#move").onclick = () => {
-        let numflsh = document.querySelector("#numflash").value
-        let perflsh = document.querySelector("#perflash").value
-        sendCommand(`FLASH ${numflsh} ${perflsh}`)
+    document.querySelector("#flash").onclick = () => {
+        let numflash = document.querySelector("#flashnum").value
+        let perflash = document.querySelector("#flashper").value
+        sendCommand(`FLASH ${numflash} ${perflash}`)
     };
 }
 
