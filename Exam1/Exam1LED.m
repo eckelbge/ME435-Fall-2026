@@ -13,7 +13,7 @@ classdef Exam1LED
             import matlab.net.http.*
 
             r = RequestMessage;
-            uri = URI("http://137.112.199.90:5000/api/" + command);
+            uri = URI("http://137.112.198.203:5000/api/" + command);
             resp = send(r,uri);
             response = resp.Body.Data;
             fprintf("Response to %s --> %s", command, response);           
