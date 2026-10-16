@@ -12,7 +12,7 @@ app.jointAngles = [0 0 0 0 0 0]; % Start at the zero angle position.
 clc
 
 % Prepare the axes_arm properties
-app.axes_arm.View = [90 -50];
+app.axes_arm.View = [230 50];
 app.axes_arm.Visible = 'off';
 
 % Once you are in Matlab App Designer you can try these axes_arm properties too.
@@ -36,15 +36,15 @@ app.link3Patch = makeStlLink("abbL3.stl", app.axes_arm, [181/255 24/255 35/255])
 app.link3Vertices = get(app.link3Patch, 'Vertices')';
 app.link3Vertices(4,:) = ones(1, size(app.link3Vertices,2));
 
-app.link4Patch = makeStlLink("abbL4.stl", app.axes_arm, [0/255 24/255 35/255]);
+app.link4Patch = makeStlLink("abbL4.stl", app.axes_arm, [103/255 52/255 235/255]);
 app.link4Vertices = get(app.link4Patch, 'Vertices')';
 app.link4Vertices(4,:) = ones(1, size(app.link4Vertices,2));
 
-app.link5Patch = makeStlLink("abbL5.stl", app.axes_arm, [181/255 0/255 35/255]);
+app.link5Patch = makeStlLink("abbL5.stl", app.axes_arm, [235/255 52/255 229/255]);
 app.link5Vertices = get(app.link5Patch, 'Vertices')';
 app.link5Vertices(4,:) = ones(1, size(app.link5Vertices,2));
 
-app.link6Patch = makeStlLink("abbL6.stl", app.axes_arm, [81/255 24/255 70/255]);
+app.link6Patch = makeStlLink("abbL6.stl", app.axes_arm, [52/255 235/255 70/255]);
 app.link6Vertices = get(app.link6Patch, 'Vertices')';
 app.link6Vertices(4,:) = ones(1, size(app.link6Vertices,2));
 % End: Code that can go into your GUI's opening function.
