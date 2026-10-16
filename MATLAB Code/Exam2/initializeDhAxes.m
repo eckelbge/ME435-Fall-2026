@@ -22,9 +22,9 @@ app.axes_arm.Visible = 'off';
 % app.axes_arm.ZLim = [-22 22];
 
 % Create vertices for all the patches
-makeStlLink("byobP0.stl", app.axes_arm, [.2 .2 .2]);  % Doesn't move. No need to save a handle to it.
+makeStlLink("byobP0.stl", app.axes_arm, [1 1 1]);  % Doesn't move. No need to save a handle to it.
 % Save references to the vertices of each patch, make points 4x1 not 3x1.
-app.link1Patch = makeStlLink("byobP1.stl", app.axes_arm, [112/255 198/255 210/255]);
+app.link1Patch = makeStlLink("byobP1.stl", app.axes_arm, [1 1 1]);
 app.link1Vertices = get(app.link1Patch, 'Vertices')';
 app.link1Vertices(4,:) = ones(1, size(app.link1Vertices,2));
 
