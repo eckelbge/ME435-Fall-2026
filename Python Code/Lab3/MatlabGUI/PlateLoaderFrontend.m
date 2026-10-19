@@ -42,7 +42,7 @@ classdef PlateLoaderFrontend
             import matlab.net.http.*
 
             r = RequestMessage;
-            uri = URI("http://137.112.199.90:8080/api/" + command);
+            uri = URI("http://137.112.199.181:8080/api/" + command);
             resp = send(r,uri);
             response = resp.Body.Data;
             fprintf("Response to %s --> %s", command, response);           
