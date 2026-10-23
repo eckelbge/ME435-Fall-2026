@@ -30,8 +30,26 @@ class DriveSystem:
         self.stop()
 
     def go_straight_for_inches(self, inches, speed):
-        m = 0.2
-        B = 0
+        m = 0.3 #0.925 #
+        B = 25 #-0.7
         inches_per_second = m * speed + B
         seconds = inches / inches_per_second
         self.go_straight_for_seconds(seconds, speed)
+
+    def spin_in_place_for_seconds(self, seconds, speed):
+        self.go(-speed,speed)
+        time.sleep(seconds)
+        self.stop()
+
+    def spin_in_place_for_degrees(self, degrees, speed):
+        m = 6
+        B = 100 
+        degrees_per_second = m * speed + B
+        seconds = degrees / degrees_per_second
+        self.spin_in_place_for_seconds(seconds, speed)
+
+    def draw_polygon(self, inches, sides, degrees, speed):
+        for k in range(sides):
+            self.go_straight_for_inches(inches,speed)
+            time.sleep(0.5)
+            self.spin_in_place_for_degrees(degrees,speed)

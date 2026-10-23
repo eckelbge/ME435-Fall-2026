@@ -38,9 +38,9 @@ def run_test_drive_system():
 
     # run_test_go_stop(robot)
     # run_test_go_straight_for_seconds(robot)
-    run_test_go_straight_for_inches(robot)
+    # run_test_go_straight_for_inches(robot)
     # run_test_spin_in_place_for_seconds(robot)
-    # run_test_spin_in_place_for_degrees(robot)
+    run_test_spin_in_place_for_degrees(robot)
     # run_test_draw_polygon(robot)
 
 
@@ -92,7 +92,7 @@ def run_test_go_straight_for_seconds(robot: Rosebot):
         input("Press the ENTER key when ready for the robot to start moving.")
 
         # -------------------------------------------------------------------------
-        # TODO: 4. Call the  go_straight_for_seconds  method of the   drive_system
+        # Done: 4. Call the  go_straight_for_seconds  method of the   drive_system
         #  of the robot, sending it the input  seconds  and  speed.
         # -------------------------------------------------------------------------
         robot.drive_system.go_straight_for_seconds(seconds, speed)
@@ -116,10 +116,11 @@ def run_test_go_straight_for_inches(robot: Rosebot):
         input("Press the ENTER key when ready for the robot to start moving.")
 
         # -------------------------------------------------------------------------
-        # Done: 5. Call the  go_straight_for_inches  method of the   drive_system
+        # #TODO: 5. Call the  go_straight_for_inches  method of the   drive_system
         #  of the robot, sending it the input  inches  and  speed.
         #  (The go_straight_for_inches method uses the same speed for both wheels.)
         # -------------------------------------------------------------------------
+        #KINDA WORKS       
         robot.drive_system.go_straight_for_inches(inches, speed)
 
 
@@ -141,10 +142,10 @@ def run_test_spin_in_place_for_seconds(robot: Rosebot):
         input("Press the ENTER key when ready for the robot to start moving.")
 
         # -------------------------------------------------------------------------
-        # TODO: 6. Call the  spin_in_place_for_seconds  method of the   drive_system
+        # Done: 6. Call the  spin_in_place_for_seconds  method of the   drive_system
         #  of the robot, sending it the input  seconds  and  speed.
         # -------------------------------------------------------------------------
-
+        robot.drive_system.spin_in_place_for_seconds(seconds,speed)
 
 def run_test_spin_in_place_for_degrees(robot: Rosebot):
     """
@@ -165,6 +166,7 @@ def run_test_spin_in_place_for_degrees(robot: Rosebot):
         # TODO: 7. Call the  spin_in_place_for_degrees  method of the   drive_system
         #  of the robot, sending it the input  degrees  and  speed.
         # -------------------------------------------------------------------------
+        robot.drive_system.spin_in_place_for_degrees(degrees,speed)
 
 
 def run_test_draw_polygon(robot: Rosebot):
@@ -197,7 +199,7 @@ def run_test_draw_polygon(robot: Rosebot):
         #  methods of the   drive_system as needed to draw the polygon,
         #  sending the inputs degrees and speed or inches and speed as appropriate.
         # -------------------------------------------------------------------------
-
+        robot.drive_system.draw_polygon(inches, sides, degrees, speed)
 
 
 main()
