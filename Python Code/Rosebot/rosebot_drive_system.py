@@ -43,13 +43,21 @@ class DriveSystem:
 
     def spin_in_place_for_degrees(self, degrees, speed):
         m = 6
-        B = 100 
+        B = 60 
         degrees_per_second = m * speed + B
         seconds = degrees / degrees_per_second
         self.spin_in_place_for_seconds(seconds, speed)
+
+    def spin_in_place_for_degrees_CW(self, degrees, speed):
+            m = 6
+            B = 100 
+            degrees_per_second = m * -speed + B
+            seconds = degrees / degrees_per_second
+            self.spin_in_place_for_seconds(seconds, speed)
 
     def draw_polygon(self, inches, sides, degrees, speed):
         for k in range(sides):
             self.go_straight_for_inches(inches,speed)
             time.sleep(0.5)
-            self.spin_in_place_for_degrees(degrees,speed)
+            if k<(sides-1):
+                self.spin_in_place_for_degrees(degrees,speed)
