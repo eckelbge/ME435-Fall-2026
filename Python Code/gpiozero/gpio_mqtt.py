@@ -11,7 +11,7 @@ class App:
         self.green_led = gz.LED(18)
 
         self.mqtt_client = mh.MqttClient()
-        self.mqtt_client.connect(subscription_topic_name="me435/eckelbge/#",
+        self.mqtt_client.connect(subscription_topic_name="me435/eckelbge/to_pi",
                                  publish_topic_name="me435/eckelbge/to_computer")
         self.mqtt_client.callback = self.mqtt_callback
 
