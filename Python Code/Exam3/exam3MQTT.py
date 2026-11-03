@@ -24,6 +24,9 @@ class App:
             elif message_payload[0] == 0:
                 direction = -1
         fast = direction*message_payload[2]
+        self.robot.drive_system.set_speeds(fast,fast,0,0)
+        time.sleep(message_payload[1])
+        self.robot.drive_system.stop()
         
 
 def main():
