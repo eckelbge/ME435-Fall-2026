@@ -44,6 +44,6 @@ if __name__ == "__main__":
     line_sensors = LineSensors()
 
     while True:
-        print(ultra.get_cm)
-        print(line_sensors.get_line_word())
+        print(ultra.get_cm())
+        # print(line_sensors.get_line_word())
         time.sleep(1)
