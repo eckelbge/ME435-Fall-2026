@@ -35,8 +35,8 @@ class App:
 
         if message_type == "mode":
             self.mode = message_payload
-            if self.mode == "drive_until_wall" or self.mode == "drive_until_line":
-                self.robot.drive_system.go(25,25)
+            #if self.mode == "drive_until_wall" or self.mode == "drive_until_line":
+                #self.robot.drive_system.go(20,20)
             if self.mode == "none":
                 self.robot.drive_system.stop()
 
@@ -71,11 +71,15 @@ def main():
                     app.robot.drive_system.stop()
                     app.robot.buzzer.beep(on_time=0.1, off_time=0.1, n=3)
                     app.mode = "none"
+                else:
+                    app.robot.drive_system.go(20,20)
             if app.mode == "drive_until_line":
-                if app.robot.line_sensors.get_left() == "W" or app.robot.line_sensors.get_middle() == "B" or app.robot.line_sensors.get_right() == "B":
+                if app.robot.line_sensors.get_left() == "B" or app.robot.line_sensors.get_middle() == "B" or app.robot.line_sensors.get_right() == "B":
                     app.robot.drive_system.stop()
                     app.robot.buzzer.beep(on_time=0.1, off_time=0.1, n=3)
                     app.mode = "none"
+                else:
+                    app.robot.drive_system.go(20,20)
 
 
     except KeyboardInterrupt:
