@@ -40,6 +40,12 @@ class App:
             if self.mode == "none":
                 self.robot.drive_system.stop()
 
+        if message_type == "pan":
+            self.robot.servos.turn_servo(0,message_payload)
+
+        if message_type == "tilt":
+            self.robot.servos.turn_servo(1,message_payload)
+
 
 def main():
     print("Car MQTT")

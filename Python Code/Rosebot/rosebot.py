@@ -1,6 +1,7 @@
 import gpiozero as gz
 from rosebot_drive_system import DriveSystem
 import rosebot_sensors
+import rosebot_servos
 
 class Rosebot:
     def __init__(self):
@@ -11,3 +12,4 @@ class Rosebot:
         self.servo_head = None # Might not actually get made
         self.buzzer = gz.Buzzer(17)
         self.adc = None
+        self.servos = rosebot_servos.RoseServo()
